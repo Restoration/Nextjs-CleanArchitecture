@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React from "react";
+import ArticlePresenter from "../presenter/Article";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+import ArticleDriverImpl from "../infrastructure/article";
+import ArticleRepositoryImpl from "../repository/article";
+import ArticleUseCaseImpl from "../useCase/article";
 
-export default IndexPage
+const repository = new ArticleRepositoryImpl(new ArticleDriverImpl());
+const useCase = new ArticleUseCaseImpl(repository);
+
+const App = () => {
+  return <ArticlePresenter useCase={useCase} />;
+};
+
+export default App;
