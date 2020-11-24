@@ -1,11 +1,9 @@
 import React from "react";
-import { Article } from "../domain/article";
+import { useArticleHooks } from "../services/article";
 
-type Props = {
-  articles: Article[];
-};
 
-const Articles = ({ articles }: Props) => {
+const Articles = () => {
+  const { articles } = useArticleHooks();
   return (
     <>
       {articles.map(article => {

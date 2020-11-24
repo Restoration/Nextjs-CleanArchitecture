@@ -1,15 +1,8 @@
 import React from "react";
-import ArticlePresenter from "../presenter/Article";
-
-import ArticleDriverImpl from "../infrastructure/article";
-import ArticleRepositoryImpl from "../repository/article";
-import ArticleUseCaseImpl from "../useCase/article";
-
-const repository = new ArticleRepositoryImpl(new ArticleDriverImpl());
-const useCase = new ArticleUseCaseImpl(repository);
+import Articles from "../components/Articles";
 
 const App = () => {
-  return <ArticlePresenter useCase={useCase} />;
+  return <Articles />;
 };
 
 export default App;

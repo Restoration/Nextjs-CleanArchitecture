@@ -1,2 +1,4 @@
 # Nextjs-CleanArchitecture
 Next.jsでクリーンアーキテクチャを検証用に実装する
+
+controllerとpresenterを実装しない代わりにservices内部に存在するCustomeHooksをアプリケーションロジックとして持っています。
